@@ -1,0 +1,59 @@
+input[type=text]
+{
+  padding: 5px 10px;
+}
+
+.btn
+{
+	color: #fff;
+	background: #666;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active
+{
+	color: #fff;
+	background: #333;
+}
+
+#images
+{
+	margin-top: 20px;
+}
+
+.flickrItemsWrapper
+{
+	width: 100%;
+	display: block;
+}
+
+.flickrItem
+{
+	position:relative;
+	display: inline-block;
+	width:300px;
+	height:300px;
+	overflow:hidden;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	border: 1px solid #333;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	opacity:0;
+}
+
+.flickrItem .imageTitle
+{
+	display: block;
+	color: #fff;
+	background: #333;
+	background: rgba(0,0,0,0.7);
+	padding: 10px 20px;
+	width: 300px;
+	margin: 0;
+	text-align: center;
+	position:absolute;
+	bottom: 0;
+}

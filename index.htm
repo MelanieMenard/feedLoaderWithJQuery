@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <h1>Flickr public images feed loader</h1>
+        <form>
+          <input type="text" autocomplete="off" placeholder="Search Flick for" id="queryTerms"/>
+          <input type="button" value="Load pictures" class="btn" id="loadFeed">
+        </form>
+      </div>
+      <div id="images" class="row-fluid">
+        
+      </div> 
+    </div>
+    
+    <!-- Load CSS in the head; load JS before the closing body tag for better performance -->
+    <!-- Handlebar template -->
+    <script id="flickrItemTemplate" type="text/x-handlebars-template">
+    {{#if items}}
+      <div class="flickrItemsWrapper">
+        {{#each items}} 
+          <div class="flickrItem">
+			<a href="{{this.link}}" target="_blank">
+				<img title="{{this.title}}" src="{{this.media.m}}" alt="{{this.title}}" class="thumb" />' 
+				<p class="imageTitle">{{this.title}}</p>
+			</a>
+		  </div>
+        {{/each}} 
+      </div>
+    {{else}}
+      <p>No public Flickr image matched your search.</p>
+    {{/if}}
+	  </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+
+</html>
